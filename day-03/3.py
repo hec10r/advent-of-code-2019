@@ -3,15 +3,15 @@ def build_path(wire_path):
     for indication in wire_path:
         start = points[-1]
         x, y = start[0], start[1]
-        dir = indication[0]
+        dir_ = indication[0]
         steps = int(indication[1:])
-        if dir == 'R':
+        if dir_ == 'R':
             points += [(x, y + i + 1) for i in range(steps)]
-        if dir == 'U':
+        if dir_ == 'U':
             points += [(x + i + 1, y) for i in range(steps)]
-        if dir == 'L':
+        if dir_ == 'L':
             points += [(x, y - i - 1) for i in range(steps)]
-        if dir == 'D':
+        if dir_ == 'D':
             points += [(x - i - 1, y) for i in range(steps)]
     return points
 
